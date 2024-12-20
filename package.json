@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build-wasm": "cd secd-wasm && wasm-pack build --target web",
     "build": "tsc -b && vite build",
     "lint": "biome lint src",
     "format": "biome format --write src",

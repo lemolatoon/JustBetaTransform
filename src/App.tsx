@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import init, {
   try_parse,
   beta_transform,
-  BetaTransformResult,
 } from "../secd-wasm/pkg/secd_wasm";
 import { Header } from "./components/Header";
 import { Editor } from "./components/Editor";

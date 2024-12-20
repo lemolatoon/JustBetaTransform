@@ -1,5 +1,3 @@
-import React from "react";
-
 interface EditorProps {
   input: string;
   onChange: (value: string) => void;

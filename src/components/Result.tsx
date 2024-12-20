@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ResultProps {
   parseResult: string;
   transformResult: string;
