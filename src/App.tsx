@@ -25,7 +25,7 @@ function App() {
     if (parseTimer.current) {
       clearTimeout(parseTimer.current);
     }
-    parseTimer.current = setTimeout(() => {
+    parseTimer.current = window.setTimeout(() => {
       handleParse();
       handleTransform();
     }, 500);
@@ -58,7 +58,7 @@ function App() {
 
   return (
     <Box sx={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-      <Header />
+      <Header onSelectLambda={(expr) => setInput(expr)} />
       <Stack
         direction={isMobile ? "column" : "row"}
         spacing={2}
