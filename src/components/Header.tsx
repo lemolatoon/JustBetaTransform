@@ -55,7 +55,7 @@ export function Header({ onSelectLambda }: HeaderProps) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Lambda Editor
+            Lambda Editor: Just Beta Transform
           </Typography>
           <IconButton
             edge="end"
