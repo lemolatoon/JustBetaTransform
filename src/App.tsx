@@ -8,7 +8,7 @@ import { useMediaQuery, Box, Button, Stack } from "@mui/material";
 
 function App() {
   const isMobile = useMediaQuery("(max-width:600px)");
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("(\\x.x) a");
   const [parseResult, setParseResult] = useState("");
   const [transformResult, setTransformResult] = useState("");
   const [log, setLog] = useState("");
