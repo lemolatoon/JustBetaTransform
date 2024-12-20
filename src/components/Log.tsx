@@ -1,12 +1,27 @@
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+
 interface LogProps {
   log: string;
 }
 
 export function Log({ log }: LogProps) {
   return (
-    <div className="p-4">
-      <h2 className="font-semibold">Transformation Log:</h2>
-      <pre className="border p-2 whitespace-pre-wrap">{log}</pre>
-    </div>
+    <Box sx={{ p: 2 }}>
+      <Typography variant="subtitle1" fontWeight="bold">
+        Transformation Log:
+      </Typography>
+      <Box
+        component="pre"
+        sx={{
+          border: 1,
+          p: 1,
+          whiteSpace: "pre-wrap",
+          overflowX: "auto",
+        }}
+      >
+        {log}
+      </Box>
+    </Box>
   );
 }

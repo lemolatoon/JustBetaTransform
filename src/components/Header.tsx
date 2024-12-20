@@ -1,7 +1,15 @@
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+
 export function Header() {
   return (
-    <header className="p-4 bg-blue-200">
-      <h1 className="text-xl font-bold">Lambda Editor</h1>
-    </header>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Lambda Editor
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 }

@@ -1,3 +1,6 @@
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+
 interface ResultProps {
   parseResult: string;
   transformResult: string;
@@ -5,11 +8,15 @@ interface ResultProps {
 
 export function Result({ parseResult, transformResult }: ResultProps) {
   return (
-    <div className="p-4">
-      <h2 className="font-semibold">Parsed Expression:</h2>
-      <div className="border p-2 mb-4">{parseResult}</div>
-      <h2 className="font-semibold">Beta Transformed Expression:</h2>
-      <div className="border p-2">{transformResult}</div>
-    </div>
+    <Box sx={{ p: 2 }}>
+      <Typography variant="subtitle1" fontWeight="bold">
+        Parsed Expression:
+      </Typography>
+      <Box sx={{ border: 1, p: 1, mb: 2 }}>{parseResult}</Box>
+      <Typography variant="subtitle1" fontWeight="bold">
+        Beta Transformed Expression:
+      </Typography>
+      <Box sx={{ border: 1, p: 1 }}>{transformResult}</Box>
+    </Box>
   );
 }
