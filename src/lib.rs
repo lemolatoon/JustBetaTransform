@@ -16,17 +16,6 @@ pub struct BetaTransformResult {
 }
 
 #[wasm_bindgen]
-impl BetaTransformResult {
-    pub fn expr(&self) -> String {
-        self.expr.clone()
-    }
-
-    pub fn log(&self) -> String {
-        self.log.clone()
-    }
-}
-
-#[wasm_bindgen]
 pub fn beta_transform(input: &str) -> Result<BetaTransformResult, String> {
     let expr = LambdaExpression::parse(input).map_err(|e| format!("{:?}", e))?;
     let mut log = String::new();
