@@ -10,13 +10,13 @@ pub fn try_parse(input: &str) -> Result<String, String> {
 
 #[wasm_bindgen]
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
-pub struct BetaTransformResult {
+pub struct BetaReductionResult {
     expr: String,
     log: String,
 }
 
 #[wasm_bindgen]
-impl BetaTransformResult {
+impl BetaReductionResult {
     pub fn expr(&self) -> String {
         self.expr.clone()
     }
@@ -27,9 +27,9 @@ impl BetaTransformResult {
 }
 
 #[wasm_bindgen]
-pub fn beta_transform(input: &str) -> Result<BetaTransformResult, String> {
+pub fn beta_transform(input: &str) -> Result<BetaReductionResult, String> {
     let expr = LambdaExpression::parse(input).map_err(|e| format!("{:?}", e))?;
     let mut log = String::new();
     let expr = SECDMachine::beta_transform_with_log(expr, &mut log).map_err(|e| format!("{:?}", e))?;
-    Ok(BetaTransformResult { expr: format!("{}", expr), log })
+    Ok(BetaReductionResult { expr: format!("{}", expr), log })
 }

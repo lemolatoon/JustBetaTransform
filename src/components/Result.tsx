@@ -14,7 +14,7 @@ export function Result({ parseResult, transformResult }: ResultProps) {
       </Typography>
       <Box sx={{ border: 1, p: 1, mb: 2 }}>{parseResult}</Box>
       <Typography variant="subtitle1" fontWeight="bold">
-        Beta Transformed Expression:
+        Beta Reduced Expression:
       </Typography>
       <Box sx={{ border: 1, p: 1 }}>{transformResult}</Box>
     </Box>

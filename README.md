@@ -1,4 +1,4 @@
-# JustBetaTransform
+# JustBetaReduction
 
 ## build
 ```
