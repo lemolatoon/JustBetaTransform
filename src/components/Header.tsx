@@ -13,7 +13,7 @@ import {
   Box,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import GitHubIcon from '@mui/icons-material/GitHub';
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const lambda_expressions = [
   "\\x.x",
@@ -60,7 +60,7 @@ export function Header({ onSelectLambda }: HeaderProps) {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Lambda Editor: Just Beta Reduction
           </Typography>
-          <Box sx={{ display: 'flex', gap: 1, mr: 1 }}>
+          <Box sx={{ display: "flex", gap: 1, mr: 1 }}>
             <IconButton
               color="inherit"
               href="https://github.com/lemolatoon/SECDMachine"

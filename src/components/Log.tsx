@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { Panel } from './common/Panel';
+import { Panel } from "./common/Panel";
 
 interface LogProps {
   log: string;

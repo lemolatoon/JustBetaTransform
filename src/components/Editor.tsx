@@ -16,7 +16,10 @@ export function Editor({ input, onChange }: EditorProps) {
 
   const operations = [
     { label: "succ", expr: "(\\n.\\f.\\x.f (n f x))" },
-    { label: "pred", expr: "(\\n.\\f.\\x.n (\\g.\\h.h (g f)) (\\u.x) (\\u.u))" },
+    {
+      label: "pred",
+      expr: "(\\n.\\f.\\x.n (\\g.\\h.h (g f)) (\\u.x) (\\u.u))",
+    },
     { label: "add", expr: "(\\m.\\n.\\f.\\x.m f (n f x))" },
     { label: "mult", expr: "(\\m.\\n.\\f.m (n f))" },
   ];
@@ -35,17 +38,14 @@ export function Editor({ input, onChange }: EditorProps) {
         value={input}
         onChange={(e) => onChange(e.target.value)}
       />
-      
+
       <Box sx={{ mt: 2 }}>
         <Typography variant="subtitle2" sx={{ mb: 1 }}>
           Church Numerals:
         </Typography>
         <ButtonGroup size="small" sx={{ mb: 2 }}>
           {churchNumerals.map((num) => (
-            <Button
-              key={num.label}
-              onClick={() => insertAtCursor(num.expr)}
-            >
+            <Button key={num.label} onClick={() => insertAtCursor(num.expr)}>
               {num.label}
             </Button>
           ))}
@@ -56,10 +56,7 @@ export function Editor({ input, onChange }: EditorProps) {
         </Typography>
         <ButtonGroup size="small">
           {operations.map((op) => (
-            <Button
-              key={op.label}
-              onClick={() => insertAtCursor(op.expr)}
-            >
+            <Button key={op.label} onClick={() => insertAtCursor(op.expr)}>
               {op.label}
             </Button>
           ))}
