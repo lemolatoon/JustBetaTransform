@@ -10,8 +10,10 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Box,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const lambda_expressions = [
   "\\x.x",
@@ -27,6 +29,7 @@ const lambda_expressions = [
   "(((\\x.x) (\\y.(y y))) (\\z.z))",
   "((\\x.(\\y.y)) (\\x.x))",
   "((\\x.(x (\\z.z))) (\\y.y))",
+  "((\\n.\\f.\\x.(n f) (f x)) (\\f.\\x.f (f x)))",
 ];
 
 interface HeaderProps {
@@ -57,6 +60,24 @@ export function Header({ onSelectLambda }: HeaderProps) {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Lambda Editor: Just Beta Reduction
           </Typography>
+          <Box sx={{ display: 'flex', gap: 1, mr: 1 }}>
+            <IconButton
+              color="inherit"
+              href="https://github.com/lemolatoon/SECDMachine"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHubIcon />
+            </IconButton>
+            <IconButton
+              color="inherit"
+              href="https://github.com/lemolatoon/JustBetaReduction"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHubIcon />
+            </IconButton>
+          </Box>
           <IconButton
             edge="end"
             color="inherit"
