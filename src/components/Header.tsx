@@ -95,7 +95,7 @@ export function Header({ onSelectLambda }: HeaderProps) {
         <List sx={{ width: 250 }}>
           <ListItem>
             <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
-              プリセット
+              Preset
             </Typography>
           </ListItem>
           {parsedList.map((parsedExpr, index) => (
