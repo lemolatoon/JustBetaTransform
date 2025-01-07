@@ -1,5 +1,5 @@
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import { Typography } from "@mui/material";
+import { Panel } from './common/Panel';
 
 interface LogProps {
   log: string;
@@ -7,21 +7,19 @@ interface LogProps {
 
 export function Log({ log }: LogProps) {
   return (
-    <Box sx={{ p: 2 }}>
+    <Panel>
       <Typography variant="subtitle1" fontWeight="bold">
         Transformation Log:
       </Typography>
-      <Box
+      <Panel
         component="pre"
         sx={{
-          border: 1,
-          p: 1,
           whiteSpace: "pre-wrap",
           overflowX: "auto",
         }}
       >
         {log}
-      </Box>
-    </Box>
+      </Panel>
+    </Panel>
   );
 }
