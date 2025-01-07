@@ -1,12 +1,11 @@
-use wasm_bindgen::prelude::*;
 use secd_machine::{LambdaExpression, SECDMachine};
+use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 pub fn try_parse(input: &str) -> Result<String, String> {
     let expr = LambdaExpression::parse(input).map_err(|e| format!("{:?}", e))?;
     Ok(format!("{}", expr))
 }
-
 
 #[wasm_bindgen]
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
@@ -29,7 +28,10 @@ impl BetaReductionResult {
 #[wasm_bindgen]
 pub fn beta_transform(input: &str) -> Result<BetaReductionResult, String> {
     let expr = LambdaExpression::parse(input).map_err(|e| format!("{:?}", e))?;
-    let mut log = String::new();
-    let expr = SECDMachine::beta_transform_with_log(expr, &mut log).map_err(|e| format!("{:?}", e))?;
-    Ok(BetaReductionResult { expr: format!("{}", expr), log })
+    let (expr, log) = SECDMachine::beta_reduction_with_body_simplification(expr)
+        .map_err(|e| format!("{:?}", e))?;
+    Ok(BetaReductionResult {
+        expr: format!("{}", expr),
+        log,
+    })
 }
